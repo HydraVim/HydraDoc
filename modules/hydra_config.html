@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>HydraVim Doc</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><strong>hydra_config</strong></li>
+  <li><a href="../modules/buffer_utils.html">buffer_utils</a></li>
+  <li><a href="../modules/git_utils.html">git_utils</a></li>
+  <li><a href="../modules/session_utils.html">session_utils</a></li>
+  <li><a href="../modules/bootstrap_utils.html">bootstrap_utils</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>hydra_config</code></h1>
+<p>Module containing functions related to HydraVim configurations.</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#set_map">set_map(mode, keys, comd, desc)</a></td>
+	<td class="summary">Sets a keymap in Vim.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#log_level_str">log_level_str(level)</a></td>
+	<td class="summary">Converts a numeric highlight level value to a string compatible with `vim.api.nvim_echo`.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#echo">echo(message, highlight, redraw)</a></td>
+	<td class="summary">Displays a message in Vim.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#notify">notify(message, level, options)</a></td>
+	<td class="summary">Displays a notification in Vim.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#generate_user_config">generate_user_config(remote, branch)</a></td>
+	<td class="summary">Generates the user config.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#get_lsp_name">get_lsp_name()</a></td>
+	<td class="summary">Gets the active LSP (Language Server Protocol) name for the current filetype.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "set_map"></a>
+    <strong>set_map(mode, keys, comd, desc)</strong>
+    </dt>
+    <dd>
+    Sets a keymap in Vim.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">mode</span>
+         The mode in which the keymap will be set (e.g., 'n' for normal mode).
+        </li>
+        <li><span class="parameter">keys</span>
+         The keys to be mapped.
+        </li>
+        <li><span class="parameter">comd</span>
+         The command or function to be executed when the keys are pressed.
+        </li>
+        <li><span class="parameter">desc</span>
+         The description of the keymap.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "log_level_str"></a>
+    <strong>log_level_str(level)</strong>
+    </dt>
+    <dd>
+    Converts a numeric highlight level value to a string compatible with `vim.api.nvim_echo`.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">level</span>
+         The numeric value of the highlight level.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        The string corresponding to the highlight level, or "info" if the value is invalid.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "echo"></a>
+    <strong>echo(message, highlight, redraw)</strong>
+    </dt>
+    <dd>
+    Displays a message in Vim.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">message</span>
+         The text of the message to be displayed.
+        </li>
+        <li><span class="parameter">highlight</span>
+         (optional) The highlight group to be used for the message. Default is "Normal".
+        </li>
+        <li><span class="parameter">redraw</span>
+         (optional) Forces a redraw before displaying the message. Default is false.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "notify"></a>
+    <strong>notify(message, level, options)</strong>
+    </dt>
+    <dd>
+    Displays a notification in Vim.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">message</span>
+         The text of the notification to be displayed.
+        </li>
+        <li><span class="parameter">level</span>
+         (optional) The level of the notification. Default is `vim.log.levels.INFO`.
+        </li>
+        <li><span class="parameter">options</span>
+         (optional) Additional options for the notification.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "generate_user_config"></a>
+    <strong>generate_user_config(remote, branch)</strong>
+    </dt>
+    <dd>
+    Generates the user config.
+ Checks if the user configuration already exists. If it doesn't exist, clones the
+ HydraVim configuration template repository and installs it.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">remote</span>
+         (optional) Remote of the repository to clone from.
+        </li>
+        <li><span class="parameter">branch</span>
+         (optional) Branch to clone from.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "get_lsp_name"></a>
+    <strong>get_lsp_name()</strong>
+    </dt>
+    <dd>
+    Gets the active LSP (Language Server Protocol) name for the current filetype.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        The name of the LSP or an empty string if no LSP is active for the filetype.
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2023-08-04 02:46:49 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

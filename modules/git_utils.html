@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>HydraVim Doc</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/hydra_config.html">hydra_config</a></li>
+  <li><a href="../modules/buffer_utils.html">buffer_utils</a></li>
+  <li><strong>git_utils</strong></li>
+  <li><a href="../modules/session_utils.html">session_utils</a></li>
+  <li><a href="../modules/bootstrap_utils.html">bootstrap_utils</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>git_utils</code></h1>
+<p>Module containing functions related to Git operations.</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#cmd">cmd(arg, dir)</a></td>
+	<td class="summary">Executes a Git command with the given arguments.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#git_available">git_available(dir)</a></td>
+	<td class="summary">Checks if Git is available in the system.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#is_remote">is_remote(remote, dir)</a></td>
+	<td class="summary">Checks if the Git repository has a remote with the specified URL.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#is_repo">is_repo(dir)</a></td>
+	<td class="summary">Checks if the current directory is a Git repository.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#get_current_branch">get_current_branch(dir)</a></td>
+	<td class="summary">Retrieves the name of the current Git branch.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#checkout">checkout(branch, dir)</a></td>
+	<td class="summary">Checks out the specified Git branch.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#fetch">fetch(dir)</a></td>
+	<td class="summary">Fetches the latest changes from the remote repository.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#clean">clean(dir)</a></td>
+	<td class="summary">Cleans the local repository.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "cmd"></a>
+    <strong>cmd(arg, dir)</strong>
+    </dt>
+    <dd>
+    Executes a Git command with the given arguments.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">arg</span>
+         The Git command and its arguments as a string.
+        </li>
+        <li><span class="parameter">dir</span>
+         (optional) The directory where the command should be executed.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        The output of the Git command as a string.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "git_available"></a>
+    <strong>git_available(dir)</strong>
+    </dt>
+    <dd>
+    Checks if Git is available in the system.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dir</span>
+         (optional) The directory where the command should be executed.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        A boolean indicating if Git is available.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "is_remote"></a>
+    <strong>is_remote(remote, dir)</strong>
+    </dt>
+    <dd>
+    Checks if the Git repository has a remote with the specified URL.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">remote</span>
+         The remote URL to check.
+        </li>
+        <li><span class="parameter">dir</span>
+         (optional) The directory where the command should be executed.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        A boolean indicating if the remote URL exists in the Git repository.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "is_repo"></a>
+    <strong>is_repo(dir)</strong>
+    </dt>
+    <dd>
+    Checks if the current directory is a Git repository.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dir</span>
+         (optional) The directory where the command should be executed.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        A boolean indicating if the current directory is a Git repository.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "get_current_branch"></a>
+    <strong>get_current_branch(dir)</strong>
+    </dt>
+    <dd>
+    Retrieves the name of the current Git branch.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dir</span>
+         (optional) The directory where the command should be executed.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        The name of the current branch as a string.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "checkout"></a>
+    <strong>checkout(branch, dir)</strong>
+    </dt>
+    <dd>
+    Checks out the specified Git branch.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">branch</span>
+         The branch to check out.
+        </li>
+        <li><span class="parameter">dir</span>
+         (optional) The directory where the command should be executed.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        A boolean indicating if the branch was successfully checked out.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "fetch"></a>
+    <strong>fetch(dir)</strong>
+    </dt>
+    <dd>
+    Fetches the latest changes from the remote repository.
+ Performs a fetch and pull to retrieve the latest changes from the remote repository.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dir</span>
+         (optional) The directory where the command should be executed.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        A boolean indicating if the fetch and pull were successful.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "clean"></a>
+    <strong>clean(dir)</strong>
+    </dt>
+    <dd>
+    Cleans the local repository.
+ Performs a series of cleanup operations on the local repository,
+ including status check, clean, and hard reset.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dir</span>
+         (optional) The directory where the command should be executed.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        A boolean indicating if the cleanup was successful.
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2023-08-04 02:46:49 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
